@@ -31,7 +31,6 @@
 		705F485B1EDE3A29009A629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 705F48591EDE3A29009A629D /* Main.storyboard */; };
 		7096A532200C531700A5A758 /* BithumbExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096A531200C531700A5A758 /* BithumbExchange.swift */; };
 		7096A534200D3B8700A5A758 /* OKExExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096A533200D3B8700A5A758 /* OKExExchange.swift */; };
-		70A6C098201D5EEC0085F3B2 /* appcenter.secret in Resources */ = {isa = PBXBuildFile; fileRef = 70A6C097201D5EEC0085F3B2 /* appcenter.secret */; };
 		70A6C09A2020261E0085F3B2 /* HitBTCExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6C0992020261E0085F3B2 /* HitBTCExchange.swift */; };
 		70AE284B1F25214D0082BDD2 /* TrackingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE284A1F2520FC0082BDD2 /* TrackingUtils.swift */; };
 		70BE1FB41EFEFCD90053BC0C /* CoincheckExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE1FB31EFEFCCC0053BC0C /* CoincheckExchange.swift */; };
@@ -104,7 +103,6 @@
 		705F485C1EDE3A29009A629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7096A531200C531700A5A758 /* BithumbExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BithumbExchange.swift; sourceTree = "<group>"; };
 		7096A533200D3B8700A5A758 /* OKExExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKExExchange.swift; sourceTree = "<group>"; };
-		70A6C097201D5EEC0085F3B2 /* appcenter.secret */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = appcenter.secret; sourceTree = "<group>"; };
 		70A6C0992020261E0085F3B2 /* HitBTCExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitBTCExchange.swift; sourceTree = "<group>"; };
 		70A6C09B202046130085F3B2 /* af */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = af; path = af.lproj/Main.strings; sourceTree = "<group>"; };
 		70A6C09C202046130085F3B2 /* af */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = af; path = af.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 		70AE284C1F2524C00082BDD2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				70A6C097201D5EEC0085F3B2 /* appcenter.secret */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -283,7 +280,7 @@
 				TargetAttributes = {
 					705F484F1EDE3A29009A629D = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = JQW3SW3342;
+						DevelopmentTeam = 8Q7M9GVALG;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -343,7 +340,6 @@
 				5379DA77204BD78D007E3E12 /* cryptocoins.ttf in Resources */,
 				705F48581EDE3A29009A629D /* Assets.xcassets in Resources */,
 				703581E01EDFDBD7003FDF3E /* Localizable.strings in Resources */,
-				70A6C098201D5EEC0085F3B2 /* appcenter.secret in Resources */,
 				705F485B1EDE3A29009A629D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +623,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = JQW3SW3342;
+				DEVELOPMENT_TEAM = 8Q7M9GVALG;
 				INFOPLIST_FILE = CoinTicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alecananian.cointicker;
@@ -647,7 +643,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = JQW3SW3342;
+				DEVELOPMENT_TEAM = 8Q7M9GVALG;
 				INFOPLIST_FILE = CoinTicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alecananian.cointicker;

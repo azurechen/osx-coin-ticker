@@ -26,9 +26,9 @@
 
 import Cocoa
 import Alamofire
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
+//import AppCenter
+//import AppCenterAnalytics
+//import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -50,17 +50,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: NSApplicationDelegate
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Start AppCenter
-        if let resourceURL = Bundle.main.url(forResource: "appcenter", withExtension: "secret") {
-            do {
-                let appSecret = try String.init(contentsOf: resourceURL, encoding: .utf8)
-                MSAppCenter.start(appSecret.trimmingCharacters(in: .whitespacesAndNewlines), withServices:[
-                    MSAnalytics.self,
-                    MSCrashes.self
-                ])
-            } catch {
-                print("Error loading AppCenter app secret: \(error)")
-            }
-        }
+//        if let resourceURL = Bundle.main.url(forResource: "appcenter", withExtension: "secret") {
+//            do {
+//                let appSecret = try String.init(contentsOf: resourceURL, encoding: .utf8)
+//                MSAppCenter.start(appSecret.trimmingCharacters(in: .whitespacesAndNewlines), withServices:[
+//                    MSAnalytics.self,
+//                    MSCrashes.self
+//                ])
+//            } catch {
+//                print("Error loading AppCenter app secret: \(error)")
+//            }
+//        }
         
         // Listen to workspace status notifications
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(onWorkspaceWillSleep(notification:)), name: NSWorkspace.willSleepNotification, object: nil)
