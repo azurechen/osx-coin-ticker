@@ -277,6 +277,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.currencyFormatter.currencySymbol = nil
         }
         
+        if quoteCurrency == .usd || quoteCurrency == .usdt {
+            // ex: $5,910
+            self.currencyFormatter.currencyCode = ""
+            self.currencyFormatter.currencySymbol = "$"
+        }
+        
         let numFractionDigits: Int
         if price < 0.001 {
             // Convert to satoshi if dealing with a small Bitcoin value
@@ -314,18 +320,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     fileprivate func updatePrices() {
+        let menuFont = NSApplication.shared.mainMenu!.font!
+        let defaultAttrs = [ NSAttributedStringKey.font: menuFont ]
+        
         DispatchQueue.main.async {
-            let priceStrings = self.currentExchange.selectedCurrencyPairs.flatMap { currencyPair in
+            let attributedTitle = NSMutableAttributedString()
+            
+            let selectedCurrencyPairs = self.currentExchange.selectedCurrencyPairs
+            for (i, currencyPair) in selectedCurrencyPairs.enumerated() {
                 let price = self.currentExchange.price(for: currencyPair)
                 let priceString = self.stringForPrice(price, in: currencyPair.quoteCurrency)
+                let attributedStr = NSAttributedString(string: priceString, attributes: defaultAttrs)
                 if self.currentExchange.isSingleBaseCurrencySelected && TickerConfig.showsIcon {
-                    return priceString
+                    attributedTitle.append(attributedStr)
+                } else {
+                    attributedTitle.append(CrytoFont.attributedString(for: currencyPair.baseCurrency.code))
+                    attributedTitle.append(NSAttributedString(string: " ", attributes: defaultAttrs))
+                    attributedTitle.append(attributedStr)
+                    if i < selectedCurrencyPairs.count - 1 {
+                        attributedTitle.append(NSAttributedString(string: " • ", attributes: defaultAttrs))
+                    }
                 }
-                
-                return "\(currencyPair.baseCurrency.code): \(priceString)"
             }
-            
-            self.statusItem.title = priceStrings.joined(separator: " • ")
+            self.statusItem.attributedTitle = attributedTitle
         }
     }
 
